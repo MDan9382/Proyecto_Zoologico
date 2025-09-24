@@ -63,7 +63,7 @@ namespace Proyecto_Zoologico
             Plantilla_DAO plantillaDAO = new Plantilla_DAO();
             string parametro = textBoxParametro.Text;
             string valor = textBoxValor.Text;
-            List<Datos.Modelos.Plantilla> plantillas = plantillaDAO.buscarParametrosPlantilla(parametro, valor);
+            List<Datos.Modelos.Plantilla> plantillas = plantillaDAO.BuscarParametrosPlantilla(parametro, valor);
             foreach (var plantilla in plantillas)
             {
                 string bonos = plantilla.Plantilla_Bonos.HasValue ? plantilla.Plantilla_Bonos.Value.ToString() : "nada";
