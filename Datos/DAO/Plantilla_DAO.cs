@@ -115,7 +115,7 @@ namespace Proyecto_Zoologico.Datos.DAO
             }
         }
 
-        public List<Plantilla> buscarParametrosPlantilla(string parametro, string valor)
+        public List<Plantilla> BuscarParametrosPlantilla(string parametro, string valor)
         {
             List<Plantilla> plantillas = new List<Plantilla>();
             try

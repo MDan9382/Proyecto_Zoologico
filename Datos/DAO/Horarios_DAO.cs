@@ -62,5 +62,80 @@ namespace Proyecto_Zoologico.Datos.DAO
             }
             return horarios;
         }
+
+        public void EliminarHorario(int horarioId)
+        {
+            try
+            {
+                string query = "DELETE FROM Tb_Horarios WHERE Horario_Id = @Id";
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Id", horarioId);
+                conexion.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al eliminar horario: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+        public void ActualizarHorario(Horarios horario)
+        {
+            try
+            {
+                string query = "UPDATE Tb_Horarios SET Horario_Duracion = @Duracion, Horario_Dias = @Dias WHERE Horario_Id = @Id";
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Duracion", horario.Horario_Duracion);
+                cmd.Parameters.AddWithValue("@Dias", horario.Horario_Dias);
+                cmd.Parameters.AddWithValue("@Id", horario.Horario_Id);
+                conexion.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al actualizar horario: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+        public List<Horarios> BuscarParametrosHorario(string parametro, string valor)
+        {
+            List<Horarios> horarios = new List<Horarios>();
+            try
+            {
+                string query = $"SELECT * FROM Tb_Horarios WHERE {parametro} = @valor";
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@valor", valor);
+                conexion.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Horarios horario = new Horarios
+                    {
+                        Horario_Id = Convert.ToInt32(reader["Horario_Id"]),
+                        Horario_Duracion = (TimeSpan)reader["Horario_Duracion"],
+                        Horario_Dias = reader["Horario_Dias"].ToString()
+                    };
+                    horarios.Add(horario);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al buscar horarios por parámetros: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return horarios;
+        }
     }
 }
