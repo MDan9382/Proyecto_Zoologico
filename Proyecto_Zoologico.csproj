@@ -102,6 +102,11 @@
     <Compile Include="Datos\DAO\Horarios_DAO.cs" />
     <Compile Include="Datos\DAO\Plantilla_DAO.cs" />
     <Compile Include="Datos\DAO\Entradas_DAO.cs" />
+    <Compile Include="Datos\DAO\Empleados_DAO.cs" />
+    <Compile Include="Datos\DAO\Horarios_DAO.cs" />
+    <Compile Include="Datos\DAO\Plantilla_DAO.cs" />
+    <Compile Include="Datos\DAO\Entradas_DAO.cs" />
+    <Compile Include="Datos\Modelos\Empleados.cs" />
     <Compile Include="Datos\Modelos\Entradas.cs" />
     <Compile Include="Datos\Modelos\Horarios.cs" />
     <Compile Include="Datos\Modelos\Plantilla.cs" />
@@ -111,19 +116,46 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Horarios.cs">
+    <Compile Include="Forms\Empleados_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Horarios.Designer.cs">
-      <DependentUpon>Horarios.cs</DependentUpon>
+    <Compile Include="Forms\Empleados_Form.Designer.cs">
+      <DependentUpon>Empleados_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Entradas_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Entradas_Form.Designer.cs">
+      <DependentUpon>Entradas_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios_Form.Designer.cs">
+      <DependentUpon>Horarios_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Plantilla_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Plantilla_Form.Designer.cs">
+      <DependentUpon>Plantilla_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Horarios.resx">
-      <DependentUpon>Horarios.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Empleados_Form.resx">
+      <DependentUpon>Empleados_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Entradas_Form.resx">
+      <DependentUpon>Entradas_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios_Form.resx">
+      <DependentUpon>Horarios_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Plantilla_Form.resx">
+      <DependentUpon>Plantilla_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -68,7 +68,7 @@ namespace Proyecto_Zoologico.Datos.DAO
             return entradas;
         }
 
-        public List<Entradas> buscarParametrosEntradas(string parametro, string valor)
+        public List<Entradas> BuscarParametrosEntradas(string parametro, string valor)
         {
             List<Entradas> entradas = new List<Entradas>();
             try
@@ -101,7 +101,7 @@ namespace Proyecto_Zoologico.Datos.DAO
         }
     
 
-    public void actualizarEntrada(Entradas entrada)
+    public void ActualizarEntrada(Entradas entrada)
         {
             // Lógica para actualizar una entrada en la base de datos
             try
@@ -124,7 +124,7 @@ namespace Proyecto_Zoologico.Datos.DAO
             }
         }
 
-        public void eliminarEntrada(int entradaId)
+        public void EliminarEntrada(int entradaId)
         {
             // Lógica para eliminar una entrada de la base de datos
             try

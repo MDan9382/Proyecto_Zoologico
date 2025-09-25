@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Zoologico.Forms
 {
-    partial class Horarios
+    partial class Horarios_Form
     {
         
         private System.ComponentModel.IContainer components = null;
@@ -57,9 +57,9 @@
             // 
             // buttonInsertar
             // 
-            this.buttonInsertar.Location = new System.Drawing.Point(132, 247);
+            this.buttonInsertar.Location = new System.Drawing.Point(132, 179);
             this.buttonInsertar.Name = "buttonInsertar";
-            this.buttonInsertar.Size = new System.Drawing.Size(75, 23);
+            this.buttonInsertar.Size = new System.Drawing.Size(150, 23);
             this.buttonInsertar.TabIndex = 4;
             this.buttonInsertar.Text = "Insertar";
             this.buttonInsertar.UseVisualStyleBackColor = true;
@@ -106,16 +106,16 @@
             this.DiascheckedListBox.TabIndex = 7;
             this.DiascheckedListBox.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
-            // Horarios
+            // Horarios_Form
             // 
-            this.ClientSize = new System.Drawing.Size(338, 276);
+            this.ClientSize = new System.Drawing.Size(338, 237);
             this.Controls.Add(this.DiascheckedListBox);
             this.Controls.Add(this.Minuto_numericUpDown);
             this.Controls.Add(this.Hora_numericUpDown);
             this.Controls.Add(this.labelDias);
             this.Controls.Add(this.labelDuracion);
             this.Controls.Add(this.buttonInsertar);
-            this.Name = "Horarios";
+            this.Name = "Horarios_Form";
             this.Text = "Insertar Horario";
             this.Load += new System.EventHandler(this.Horarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Hora_numericUpDown)).EndInit();

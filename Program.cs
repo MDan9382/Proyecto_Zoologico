@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Zoologico.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,8 +17,7 @@ namespace Proyecto_Zoologico
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-            Application.Run(new Forms.Horarios());
+            Application.Run(new Entradas_Form());
         }
     }
 }
