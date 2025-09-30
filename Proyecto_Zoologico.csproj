@@ -99,9 +99,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\ConexionSQL.cs" />
+<<<<<<< HEAD
     <Compile Include="Datos\DAO\Alimentacion_DAO.cs" />
     <Compile Include="Datos\DAO\Control_LimpiezaDAO.cs" />
     <Compile Include="Datos\DAO\Control_TiempoDAO.cs" />
+=======
+<<<<<<< HEAD
+    <Compile Include="Datos\DAO\Horarios_DAO.cs" />
+    <Compile Include="Datos\DAO\Plantilla_DAO.cs" />
+    <Compile Include="Datos\DAO\Entradas_DAO.cs" />
+=======
+>>>>>>> a7bf8a64db95ce8f3855d79c3f08593f3f9ce13c
     <Compile Include="Datos\DAO\Empleados_DAO.cs" />
     <Compile Include="Datos\DAO\Horarios_DAO.cs" />
     <Compile Include="Datos\DAO\Inventario_DAO.cs" />
@@ -112,6 +120,10 @@
     <Compile Include="Datos\Modelos\Control_Limpieza.cs" />
     <Compile Include="Datos\Modelos\Control_Tiempo.cs" />
     <Compile Include="Datos\Modelos\Empleados.cs" />
+<<<<<<< HEAD
+=======
+>>>>>>> 7d70c19e4ccf4a2cbac006c94cb0638ce7c20e0d
+>>>>>>> a7bf8a64db95ce8f3855d79c3f08593f3f9ce13c
     <Compile Include="Datos\Modelos\Entradas.cs" />
     <Compile Include="Datos\Modelos\Horarios.cs" />
     <Compile Include="Datos\Modelos\Inventario.cs" />
@@ -122,11 +134,26 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="Forms\Horarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios.Designer.cs">
+      <DependentUpon>Horarios.cs</DependentUpon>
+    </Compile>
+=======
+>>>>>>> 7d70c19e4ccf4a2cbac006c94cb0638ce7c20e0d
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+    <EmbeddedResource Include="Forms\Horarios.resx">
+      <DependentUpon>Horarios.cs</DependentUpon>
+    </EmbeddedResource>
+=======
+>>>>>>> 7d70c19e4ccf4a2cbac006c94cb0638ce7c20e0d
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
