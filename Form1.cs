@@ -26,24 +26,12 @@ namespace Proyecto_Zoologico
 
         private void buttonInsertar_Click(object sender, EventArgs e)
         {
-            string sueldo = textBoxPlantillaSueldo.Text;
-            string bonos = textBoxBono.Text;
-            string deduccion = textBoxDeduccion.Text;
-            Plantilla plantilla = new Plantilla(float.Parse(sueldo));
-            try
-            {
-                plantilla.Plantilla_Bonos = float.Parse(bonos);
-                plantilla.Plantilla_Deduccion = float.Parse(deduccion);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error al convertir bonos o deduccion: " + ex.Message);
-            }
-            finally
-            {
-                Plantilla_DAO plantillaDAO = new Plantilla_DAO();
-                plantillaDAO.AgregarPlantilla(plantilla);
-            }
+            
+            /*Control_Clinico controlClinico = new Control_Clinico(DateTime.Now, "Tratamiento de prueba", 1, 8);
+            controlClinico.ControlClinico_Descripcion = "Descripción de prueba";
+            ControlClinico_DAO controlClinicoDAO = new ControlClinico_DAO();
+            controlClinicoDAO.AgregarControlClinico(controlClinico);*/
+
         }
 
         private void buttonObtener_Click(object sender, EventArgs e)
