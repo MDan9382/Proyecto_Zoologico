@@ -99,17 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\ConexionSQL.cs" />
-<<<<<<< HEAD
     <Compile Include="Datos\DAO\Alimentacion_DAO.cs" />
     <Compile Include="Datos\DAO\Control_LimpiezaDAO.cs" />
     <Compile Include="Datos\DAO\Control_TiempoDAO.cs" />
-=======
-<<<<<<< HEAD
-    <Compile Include="Datos\DAO\Horarios_DAO.cs" />
-    <Compile Include="Datos\DAO\Plantilla_DAO.cs" />
-    <Compile Include="Datos\DAO\Entradas_DAO.cs" />
-=======
->>>>>>> a7bf8a64db95ce8f3855d79c3f08593f3f9ce13c
     <Compile Include="Datos\DAO\Empleados_DAO.cs" />
     <Compile Include="Datos\DAO\Horarios_DAO.cs" />
     <Compile Include="Datos\DAO\Inventario_DAO.cs" />
@@ -120,10 +112,6 @@
     <Compile Include="Datos\Modelos\Control_Limpieza.cs" />
     <Compile Include="Datos\Modelos\Control_Tiempo.cs" />
     <Compile Include="Datos\Modelos\Empleados.cs" />
-<<<<<<< HEAD
-=======
->>>>>>> 7d70c19e4ccf4a2cbac006c94cb0638ce7c20e0d
->>>>>>> a7bf8a64db95ce8f3855d79c3f08593f3f9ce13c
     <Compile Include="Datos\Modelos\Entradas.cs" />
     <Compile Include="Datos\Modelos\Horarios.cs" />
     <Compile Include="Datos\Modelos\Inventario.cs" />
@@ -133,6 +121,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Control_Tiempo_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Control_Tiempo_Form.Designer.cs">
+      <DependentUpon>Control_Tiempo_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Empleados_Form.cs">
       <SubType>Form</SubType>
@@ -152,20 +146,25 @@
     <Compile Include="Forms\Horarios_Form.Designer.cs">
       <DependentUpon>Horarios_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Inventario_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Inventario_Form.Designer.cs">
+      <DependentUpon>Inventario_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Plantilla_Form.cs">
-<<<<<<< HEAD
-    <Compile Include="Forms\Horarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Plantilla_Form.Designer.cs">
       <DependentUpon>Plantilla_Form.cs</DependentUpon>
     </Compile>
-=======
->>>>>>> 7d70c19e4ccf4a2cbac006c94cb0638ce7c20e0d
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Control_Tiempo_Form.resx">
+      <DependentUpon>Control_Tiempo_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Empleados_Form.resx">
       <DependentUpon>Empleados_Form.cs</DependentUpon>
@@ -176,14 +175,12 @@
     <EmbeddedResource Include="Forms\Horarios_Form.resx">
       <DependentUpon>Horarios_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inventario_Form.resx">
+      <DependentUpon>Inventario_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Plantilla_Form.resx">
       <DependentUpon>Plantilla_Form.cs</DependentUpon>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Forms\Horarios.resx">
-      <DependentUpon>Horarios.cs</DependentUpon>
     </EmbeddedResource>
-=======
->>>>>>> 7d70c19e4ccf4a2cbac006c94cb0638ce7c20e0d
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

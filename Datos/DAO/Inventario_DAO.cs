@@ -70,11 +70,9 @@ namespace Proyecto_Zoologico.Datos.DAO
         {
             try
             {
-                string query = "UPDATE Tb_Inventario SET Inventario_Nombre = @Nombre, Inventario_Tipo = @Tipo, Inventario_Cantidad = @Cantidad " +
+                string query = "UPDATE Tb_Inventario SET Inventario_Cantidad = @Cantidad " +
                                "WHERE Inventario_Id = @Id";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@Nombre", inventario.Inventario_Nombre);
-                cmd.Parameters.AddWithValue("@Tipo", inventario.Inventario_Tipo);
+                MySqlCommand cmd = new MySqlCommand(query, connection);        
                 cmd.Parameters.AddWithValue("@Cantidad", inventario.Inventario_Cantidad);
                 cmd.Parameters.AddWithValue("@Id", inventario.Inventario_Id);
                 connection.Open();

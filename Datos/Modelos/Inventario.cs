@@ -8,7 +8,7 @@ namespace Proyecto_Zoologico.Datos.Modelos
         public string Inventario_Nombre { get; set; }
         public string Inventario_Tipo { get; set; }
         public int Inventario_Cantidad { get; set; }
-      //  public Inventario() { }
+        public Inventario() { }
 
         public Inventario(string inventario_Nombre, string inventario_Tipo, int inventario_Cantidad)
         {

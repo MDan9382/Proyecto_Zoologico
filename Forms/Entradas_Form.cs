@@ -46,8 +46,7 @@ namespace Proyecto_Zoologico.Forms
         }
 
         private void LimpiarCampos()
-        {
-            comboBoxTipoEntrada.Clear();
+        {          
             dtpFecha.Value = DateTime.Now;
         }
     }

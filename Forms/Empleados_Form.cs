@@ -10,7 +10,14 @@ namespace Proyecto_Zoologico.Forms
         public Empleados_Form()
         {
             InitializeComponent();
-            empleado = new Empleados();
+            empleado = new Empleados(
+                empleado_NIT: string.Empty,
+                empleado_DPI: string.Empty,
+                empleado_Nombre: string.Empty,
+                empleado_Cargo: string.Empty,
+                plantilla_Id: 0,
+                horario_Id: 0
+            );
         }
 
         public Empleados empleado;
