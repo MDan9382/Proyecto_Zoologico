@@ -49,15 +49,16 @@ namespace Proyecto_Zoologico.Datos.DAO
                 while (reader.Read())
                 {
                     Empleados empleado = new Empleados
-                    {
-                        Empleado_Id = Convert.ToInt32(reader["Empleado_Id"]),
-                        Empleado_NIT = reader["Empleado_NIT"].ToString(),
-                        Empleado_DPI = reader["Empleado_DPI"].ToString(),
-                        Empleado_Nombre = reader["Empleado_Nombre"].ToString(),
-                        Empleado_Cargo = reader["Empleado_Cargo"].ToString(),
-                        Plantilla_Id = Convert.ToInt32(reader["Plantilla_Id"]),
-                        Horario_Id = Convert.ToInt32(reader["Horario_Id"])
-                    };
+                        (
+                        reader["Empleado_NIT"].ToString(),
+                        reader["Empleado_DPI"].ToString(),
+                        reader["Empleado_Nombre"].ToString(),
+                        reader["Empleado_Cargo"].ToString(),
+                        Convert.ToInt32(reader["Plantilla_Id"]),
+                        Convert.ToInt32(reader["Horario_Id"])
+                    );
+                    empleado.Empleado_Id = Convert.ToInt32(reader["Empleado_Id"]);
+
                     empleados.Add(empleado);
                 }
                 reader.Close();
@@ -131,16 +132,16 @@ namespace Proyecto_Zoologico.Datos.DAO
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Empleados empleado = new Empleados
-                    {
-                        Empleado_Id = Convert.ToInt32(reader["Empleado_Id"]),
-                        Empleado_NIT = reader["Empleado_NIT"].ToString(),
-                        Empleado_DPI = reader["Empleado_DPI"].ToString(),
-                        Empleado_Nombre = reader["Empleado_Nombre"].ToString(),
-                        Empleado_Cargo = reader["Empleado_Cargo"].ToString(),
-                        Plantilla_Id = Convert.ToInt32(reader["Plantilla_Id"]),
-                        Horario_Id = Convert.ToInt32(reader["Horario_Id"])
-                    };
+                    Empleados empleado = new Empleados (                       
+                        reader["Empleado_NIT"].ToString(),
+                        reader["Empleado_DPI"].ToString(),
+                        reader["Empleado_Nombre"].ToString(),
+                        reader["Empleado_Cargo"].ToString(),
+                        Convert.ToInt32(reader["Plantilla_Id"]),
+                        Convert.ToInt32(reader["Horario_Id"])
+                    );
+                    empleado.Empleado_Id = Convert.ToInt32(reader["Empleado_Id"]);
+
                     empleados.Add(empleado);
                 }
                 reader.Close();

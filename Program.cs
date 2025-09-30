@@ -17,7 +17,7 @@ namespace Proyecto_Zoologico
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Entradas_Form());
+            Application.Run(new Form1());
         }
     }
 }

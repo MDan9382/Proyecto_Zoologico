@@ -12,7 +12,6 @@ namespace Proyecto_Zoologico.Datos.Modelos
         public int Plantilla_Id { get; set; }
         public int Horario_Id { get; set; }
 
-        public Empleados() { }
 
         public Empleados(string empleado_NIT, string empleado_DPI, string empleado_Nombre, string empleado_Cargo, int plantilla_Id, int horario_Id)
         {

@@ -9,8 +9,7 @@ namespace Proyecto_Zoologico.Forms
     {
         public Entradas_Form()
         {
-            InitializeComponent();
-            // Inicializar el DateTimePicker con la fecha actual
+            InitializeComponent();            
             dtpFecha.Value = DateTime.Now;
         }
 
@@ -48,7 +47,7 @@ namespace Proyecto_Zoologico.Forms
 
         private void LimpiarCampos()
         {
-            txtTipo.Clear();
+            comboBoxTipoEntrada.Clear();
             dtpFecha.Value = DateTime.Now;
         }
     }
