@@ -16,12 +16,12 @@ namespace Proyecto_Zoologico.Datos.DAO
         {
             try
             {
-                string query = "INSERT INTO Tb_Alimentacion (Alimentacion_Hora, Alimentacion_Dieta, Inventario_Id) " +
-                               "VALUES (@Hora, @Dieta, @InventarioId)";
+                string query = "INSERT INTO Tb_Alimentacion (Alimentacion_Hora, Inventario_Id, Animal_Id) " +
+                               "VALUES (@Hora, @InventarioId)";
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
-                cmd.Parameters.AddWithValue("@Hora", alimentacion.Alimentacion_Hora);
-                cmd.Parameters.AddWithValue("@Dieta", alimentacion.Alimentacion_Dieta);
+                cmd.Parameters.AddWithValue("@Hora", alimentacion.Alimentacion_Hora);                
                 cmd.Parameters.AddWithValue("@InventarioId", alimentacion.Inventario_Id);
+                cmd.Parameters.AddWithValue("@AnimalId", alimentacion.Animal_Id);
                 conexion.Open();
                 cmd.ExecuteNonQuery();
             }
@@ -48,8 +48,8 @@ namespace Proyecto_Zoologico.Datos.DAO
                 {
                     Alimentacion alimentacion = new Alimentacion(
                         (TimeSpan)reader["Alimentacion_Hora"],
-                        reader["Alimentacion_Dieta"].ToString(),
-                        Convert.ToInt32(reader["Inventario_Id"])
+                        Convert.ToInt32(reader["Inventario_Id"]),
+                        Convert.ToInt32(reader["Animal_Id"]
                     );
                     alimentacion.Alimentacion_Id = Convert.ToInt32(reader["Alimentacion_Id"]);
                     alimentaciones.Add(alimentacion);
@@ -71,12 +71,12 @@ namespace Proyecto_Zoologico.Datos.DAO
         {   
             try
             {
-                string query = "UPDATE Tb_Alimentacion SET Alimentacion_Hora = @Hora, Alimentacion_Dieta = @Dieta, Inventario_Id = @InventarioId " +
-                               "WHERE Alimentacion_Id = @Id";
+                string query = "UPDATE Tb_Alimentacion SET Alimentacion_Hora = @Hora, Inventario_Id = @InventarioId, " +
+                               "Animal_Id = @AnimalId WHERE Alimentacion_Id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@Hora", alimentacion.Alimentacion_Hora);
-                cmd.Parameters.AddWithValue("@Dieta", alimentacion.Alimentacion_Dieta);
                 cmd.Parameters.AddWithValue("@InventarioId", alimentacion.Inventario_Id);
+                cmd.Parameters.AddWithValue("@AnimalId", alimentacion.Animal_Id);
                 cmd.Parameters.AddWithValue("@Id", alimentacion.Alimentacion_Id);
                 conexion.Open();
                 cmd.ExecuteNonQuery();
@@ -125,8 +125,8 @@ namespace Proyecto_Zoologico.Datos.DAO
                 {
                     Alimentacion alimentacion = new Alimentacion(
                         (TimeSpan)reader["Alimentacion_Hora"],
-                        reader["Alimentacion_Dieta"].ToString(),
-                        Convert.ToInt32(reader["Inventario_Id"])
+                        Convert.ToInt32(reader["Inventario_Id"]),
+                        Convert.ToInt32(reader["Animal_Id"]
                     );
                     alimentacion.Alimentacion_Id = Convert.ToInt32(reader["Alimentacion_Id"]);
                     alimentaciones.Add(alimentacion);

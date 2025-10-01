@@ -9,12 +9,13 @@ namespace Proyecto_Zoologico.Datos.Modelos
         public int Empleado_Id { get; set; }
 
         public int ControlLimpieza_Fecha { get; set; }
-
-        public Control_Limpieza(TimeSpan controlLimpieza_Hora, int empleado_Id)
+        public int Locacion_Id { get; set; }
+        public Control_Limpieza(TimeSpan controlLimpieza_Hora, int empleado_Id, int locacion_Id)
         {
             ControlLimpieza_Hora = controlLimpieza_Hora;
             Empleado_Id = empleado_Id;
             ControlLimpieza_Fecha = DateTime.Now.Day;
+            Locacion_Id = locacion_Id;
         }
     }
 }
