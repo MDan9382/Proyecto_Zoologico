@@ -16,7 +16,7 @@ namespace Proyecto_Zoologico.Datos.DAO
             try
             {
                 connection.Open();
-                string query = "INSERT INTO locaciones (Locacion_Nombre, Locacion_Tipo) VALUES (@nombre, @tipo)";
+                string query = "INSERT INTO tb_locaciones (Locacion_Nombre, Locacion_Tipo) VALUES (@nombre, @tipo)";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@nombre", locacion.Locacion_Nombre);
                 command.Parameters.AddWithValue("@tipo", locacion.Locacion_Tipo);
@@ -38,7 +38,7 @@ namespace Proyecto_Zoologico.Datos.DAO
             try
             {
                 connection.Open();
-                string query = "SELECT * FROM locaciones";
+                string query = "SELECT * FROM tb_locaciones";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -68,7 +68,7 @@ namespace Proyecto_Zoologico.Datos.DAO
             try
             {
                 connection.Open();
-                string query = "DELETE FROM locaciones WHERE Locacion_Id = @id";
+                string query = "DELETE FROM tb_locaciones WHERE Locacion_Id = @id";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@id", locacionId);
                 command.ExecuteNonQuery();
@@ -88,7 +88,7 @@ namespace Proyecto_Zoologico.Datos.DAO
             try
             {
                 connection.Open();
-                string query = "UPDATE locaciones SET Locacion_Nombre = @nombre, Locacion_Tipo = @tipo WHERE Locacion_Id = @id";
+                string query = "UPDATE tb_locaciones SET Locacion_Nombre = @nombre, Locacion_Tipo = @tipo WHERE Locacion_Id = @id";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@nombre", locacion.Locacion_Nombre);
                 command.Parameters.AddWithValue("@tipo", locacion.Locacion_Tipo);
@@ -112,7 +112,7 @@ namespace Proyecto_Zoologico.Datos.DAO
             try
             {
                 connection.Open();
-                string query = $"SELECT * FROM locaciones WHERE {parametro} = @valor";
+                string query = $"SELECT * FROM tb_locaciones WHERE {parametro} = @valor";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@valor", valor);
                 MySqlDataReader reader = command.ExecuteReader();

@@ -9,7 +9,7 @@ namespace Proyecto_Zoologico.Forms
     public partial class Inventario_Form : Form
     {
         private Inventario_DAO inventarioDAO;
-        private int? idSeleccionado = null;
+        
 
         public Inventario_Form()
         {
@@ -95,7 +95,7 @@ namespace Proyecto_Zoologico.Forms
             txtNombre.Clear();
             txtTipo.Clear();
             txtCantidad.Clear();
-            idSeleccionado = null;
+            
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)

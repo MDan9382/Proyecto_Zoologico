@@ -129,6 +129,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Alimentacion_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alimentacion_Form.Designer.cs">
+      <DependentUpon>Alimentacion_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Animales_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Animales_Form.Designer.cs">
+      <DependentUpon>Animales_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Control_Tiempo_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +171,12 @@
     <Compile Include="Forms\Inventario_Form.Designer.cs">
       <DependentUpon>Inventario_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Locaciones_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Locaciones_Form.Designer.cs">
+      <DependentUpon>Locaciones_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Plantilla_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +187,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alimentacion_Form.resx">
+      <DependentUpon>Alimentacion_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Animales_Form.resx">
+      <DependentUpon>Animales_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Control_Tiempo_Form.resx">
       <DependentUpon>Control_Tiempo_Form.cs</DependentUpon>

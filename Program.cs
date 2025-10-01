@@ -1,4 +1,5 @@
 ﻿using Proyecto_Zoologico.Forms;
+using Proyecto_Zoologico.Formularios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Proyecto_Zoologico
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inventario_Form());
+            Application.Run(new Locaciones_Form());
         }
     }
 }

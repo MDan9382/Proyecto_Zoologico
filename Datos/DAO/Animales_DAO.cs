@@ -147,6 +147,57 @@ namespace Proyecto_Zoologico.Datos.DAO
             }
             return animales;
         }
+        public List<string> BuscarAnimales() 
+        {
+            List<string> animales = new List<string>();
+            try 
+            {
+                string query = "select Animal_Especie from db_zoologico.tb_animales;";
+                MySqlCommand cmd = new MySqlCommand(query, conexion);                
+                conexion.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read()) 
+                {
+                    string animal = reader["Animal_Especie"].ToString();                    
+                    animales.Add(animal);
+                }
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine("Error al buscar animales: " + ex.Message);
+            }
+            finally 
+            {
+                conexion.Close();
+            }
+            return animales;
+        }
+
+        public int ObtenerAnimalIdPorEspecie(string especie)
+        {
+            int animalId = -1;
+            try
+            {
+                string query = "SELECT Animal_Id FROM db_zoologico.tb_animales WHERE Animal_Especie = @Especie LIMIT 1";
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Especie", especie);
+                conexion.Open();
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    animalId = Convert.ToInt32(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener el ID del animal: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return animalId;
+        }
 
     }
 }
