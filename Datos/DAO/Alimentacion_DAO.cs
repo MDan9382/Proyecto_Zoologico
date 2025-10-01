@@ -49,7 +49,7 @@ namespace Proyecto_Zoologico.Datos.DAO
                     Alimentacion alimentacion = new Alimentacion(
                         (TimeSpan)reader["Alimentacion_Hora"],
                         Convert.ToInt32(reader["Inventario_Id"]),
-                        Convert.ToInt32(reader["Animal_Id"]
+                        Convert.ToInt32(reader["Animal_Id"])
                     );
                     alimentacion.Alimentacion_Id = Convert.ToInt32(reader["Alimentacion_Id"]);
                     alimentaciones.Add(alimentacion);
@@ -126,7 +126,7 @@ namespace Proyecto_Zoologico.Datos.DAO
                     Alimentacion alimentacion = new Alimentacion(
                         (TimeSpan)reader["Alimentacion_Hora"],
                         Convert.ToInt32(reader["Inventario_Id"]),
-                        Convert.ToInt32(reader["Animal_Id"]
+                        Convert.ToInt32(reader["Animal_Id"])
                     );
                     alimentacion.Alimentacion_Id = Convert.ToInt32(reader["Alimentacion_Id"]);
                     alimentaciones.Add(alimentacion);
