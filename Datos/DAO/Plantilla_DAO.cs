@@ -10,17 +10,18 @@ namespace Proyecto_Zoologico.Datos.DAO
     {
         MySqlConnection conexion = new MySqlConnection(ConexionSQL.cadenaConexion);
 
-        public void AgregarPlantilla(Plantilla plantilla)
+        public int AgregarPlantilla(Plantilla plantilla)
         {
+            int idGenerado = 0;
             try
             {
-                string query = "INSERT INTO Tb_Plantillas (Plantilla_Sueldo, Plantilla_Bonos, Plantilla_Deduccion) VALUES (@Sueldo, @Bonos, @Deduccion)";
+                string query = "INSERT INTO Tb_Plantillas (Plantilla_Sueldo, Plantilla_Bonos, Plantilla_Deduccion) VALUES (@Sueldo, @Bonos, @Deduccion); SELECT LAST_INSERT_ID();";
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@Sueldo", plantilla.Plantilla_Sueldo);
                 cmd.Parameters.AddWithValue("@Bonos", (object)plantilla.Plantilla_Bonos ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("@Deduccion", (object)plantilla.Plantilla_Deduccion ?? DBNull.Value);
                 conexion.Open();
-                cmd.ExecuteNonQuery();
+                idGenerado = Convert.ToInt32(cmd.ExecuteScalar());
             }
             catch (Exception ex)
             {
@@ -30,6 +31,7 @@ namespace Proyecto_Zoologico.Datos.DAO
             {
                 conexion.Close();
             }
+            return idGenerado;
         }
 
         public List<Plantilla> ObtenerPlantillas()

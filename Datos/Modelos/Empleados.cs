@@ -2,7 +2,7 @@
 
 namespace Proyecto_Zoologico.Datos.Modelos
 {
-    internal class Empleados
+    public class Empleados
     {
         public int Empleado_Id { get; set; }
         public string Empleado_NIT { get; set; }

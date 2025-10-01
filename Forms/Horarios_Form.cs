@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Zoologico.Datos.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,14 @@ using System.Windows.Forms;
 
 namespace Proyecto_Zoologico.Forms
 {
-    public partial class Horarios : Form
+    public partial class Horarios_Form : Form
     {
-        public Horarios()
+
+        private Empleados _empleado;
+        public Horarios_Form(Empleados empleado)
         {
             InitializeComponent();
+            _empleado = empleado;
         }
 
         private void Horarios_Load(object sender, EventArgs e)
@@ -29,8 +33,9 @@ namespace Proyecto_Zoologico.Forms
 
             Datos.Modelos.Horarios horario = new Datos.Modelos.Horarios(duracion, dias);
             Datos.DAO.Horarios_DAO horarioDAO = new Datos.DAO.Horarios_DAO();
-            horarioDAO.AgregarHorario(horario);
-            MessageBox.Show("Horario insertado correctamente.");
+            _empleado.Horario_Id = horarioDAO.AgregarHorario(horario);
+            //MessageBox.Show("Horario insertado correctamente.");
+            Close();
         }
 
         private void labelDuracion_Click(object sender, EventArgs e)

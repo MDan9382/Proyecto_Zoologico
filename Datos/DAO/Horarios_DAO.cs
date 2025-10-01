@@ -11,16 +11,18 @@ namespace Proyecto_Zoologico.Datos.DAO
     internal class Horarios_DAO
     {
         MySqlConnection conexion = new MySqlConnection(ConexionSQL.cadenaConexion);
-        public void AgregarHorario(Horarios horario)
+        public int AgregarHorario(Horarios horario)
         {
+            int idGenerado = 0;
+
             try
             {
-                string query = "INSERT INTO Tb_Horarios (Horario_Duracion, Horario_Dias) VALUES (@Duracion, @Dias)";
+                string query = "INSERT INTO Tb_Horarios (Horario_Duracion, Horario_Dias) VALUES (@Duracion, @Dias); SELECT LAST_INSERT_ID();";
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@Duracion", horario.Horario_Duracion);
                 cmd.Parameters.AddWithValue("@Dias", horario.Horario_Dias);
                 conexion.Open();
-                cmd.ExecuteNonQuery();
+                idGenerado = Convert.ToInt32(cmd.ExecuteScalar());
             }
             catch (Exception ex)
             {
@@ -30,6 +32,7 @@ namespace Proyecto_Zoologico.Datos.DAO
             {
                 conexion.Close();
             }
+            return idGenerado;
         }
         public List<Horarios> ObtenerHorarios()
         {
