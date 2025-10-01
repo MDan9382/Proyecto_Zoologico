@@ -8,14 +8,16 @@ namespace Proyecto_Zoologico.Datos.Modelos
         public string Animal_Especie { get; set; }
         public float Animal_Tamaño { get; set; }
         public float Animal_Peso { get; set; }
+        public string Animal_Dieta { get; set; }
         public int Alimentacion_Id { get; set; }
 
-        public Animales (string animal_Especie, float animal_Tamaño, float animal_Peso, int animal_Alimentacion)
+        public Animales (string animal_Especie, float animal_Tamaño, float animal_Peso, string animal_Dieta,  int animal_Alimentacion)
         {
             Animal_Especie = animal_Especie;
             Animal_Tamaño = animal_Tamaño;
             Animal_Peso = animal_Peso;
             Alimentacion_Id = animal_Alimentacion;
+            Animal_Dieta = animal_Dieta;
         }
     }
 }

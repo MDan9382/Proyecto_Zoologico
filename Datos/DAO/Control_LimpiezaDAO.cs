@@ -14,13 +14,16 @@ namespace Proyecto_Zoologico.Datos.DAO
 
         public void AgregarControlLimpieza(Control_Limpieza controlLimpieza)
         {
+           
             try
             {
-                string query = "INSERT INTO Tb_Control_Limpieza (ControlLimpieza_Hora, Empleado_Id) VALUES (@Hora, @EmpleadoId)";
+                conexion.Open();
+                string query = "INSERT INTO Tb_Control_Limpieza (ControlLimpieza_Hora, Empleado_Id, ControlLimpieza_Fecha, Locacion_Id) VALUES (@Hora, @EmpleadoId, @Fecha, @Locacion_Id)";
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@Hora", controlLimpieza.ControlLimpieza_Hora);
                 cmd.Parameters.AddWithValue("@EmpleadoId", controlLimpieza.Empleado_Id);
-                conexion.Open();
+                cmd.Parameters.AddWithValue("@Fecha", controlLimpieza.ControlLimpieza_Fecha);
+                cmd.Parameters.AddWithValue("@Locacion_Id", controlLimpieza.Locacion_Id);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -46,10 +49,11 @@ namespace Proyecto_Zoologico.Datos.DAO
                 {
                     Control_Limpieza controlLimpieza = new Control_Limpieza(
                         (TimeSpan)reader["ControlLimpieza_Hora"],
-                        Convert.ToInt32(reader["Empleado_Id"])
+                        Convert.ToInt32(reader["Empleado_Id"]),
+                        Convert.ToInt32(reader["Locacion_Id"])                        
                     );
-                    controlLimpieza.ControlLimpieza_Id = Convert.ToInt32(reader["ControlLimpieza_Id"]);
                     controlLimpieza.ControlLimpieza_Fecha = Convert.ToInt32(reader["ControlLimpieza_Fecha"]);
+                    controlLimpieza.ControlLimpieza_Id = Convert.ToInt32(reader["ControlLimpieza_Id"]);                    
                     controlesLimpieza.Add(controlLimpieza);
                 }
                 reader.Close();
@@ -123,6 +127,7 @@ namespace Proyecto_Zoologico.Datos.DAO
                     Control_Limpieza controlLimpieza = new Control_Limpieza(
                         (TimeSpan)reader["ControlLimpieza_Hora"],
                         Convert.ToInt32(reader["Empleado_Id"])
+                        , Convert.ToInt32(reader["Locacion_Id"])
                     );
                     controlLimpieza.ControlLimpieza_Id = Convert.ToInt32(reader["ControlLimpieza_Id"]);
                     controlLimpieza.ControlLimpieza_Fecha = Convert.ToInt32(reader["ControlLimpieza_Fecha"]);
