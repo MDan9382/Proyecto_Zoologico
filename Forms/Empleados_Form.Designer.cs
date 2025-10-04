@@ -25,6 +25,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblCargo = new System.Windows.Forms.Label();
+            this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.gbAsignaciones = new System.Windows.Forms.GroupBox();
             this.lblPlantillaId = new System.Windows.Forms.Label();
             this.buttonPlantilla = new System.Windows.Forms.Button();
@@ -33,7 +34,6 @@
             this.gbAcciones = new System.Windows.Forms.GroupBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.panelSuperior.SuspendLayout();
             this.gbDatosPersonales.SuspendLayout();
             this.gbAsignaciones.SuspendLayout();
@@ -57,13 +57,12 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
             this.lblTitulo.Location = new System.Drawing.Point(12, 18);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(373, 41);
+            this.lblTitulo.Size = new System.Drawing.Size(310, 37);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "👤 Gestión de Empleados";
+            this.lblTitulo.Text = "Gestión de Empleados";
             // 
             // gbDatosPersonales
             // 
-            this.gbDatosPersonales.Controls.Add(this.cmbCargo);
             this.gbDatosPersonales.Controls.Add(this.lblNIT);
             this.gbDatosPersonales.Controls.Add(this.txtNIT);
             this.gbDatosPersonales.Controls.Add(this.lblDPI);
@@ -71,6 +70,7 @@
             this.gbDatosPersonales.Controls.Add(this.lblNombre);
             this.gbDatosPersonales.Controls.Add(this.txtNombre);
             this.gbDatosPersonales.Controls.Add(this.lblCargo);
+            this.gbDatosPersonales.Controls.Add(this.cmbCargo);
             this.gbDatosPersonales.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.gbDatosPersonales.Location = new System.Drawing.Point(20, 90);
             this.gbDatosPersonales.Name = "gbDatosPersonales";
@@ -85,7 +85,7 @@
             this.lblNIT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblNIT.Location = new System.Drawing.Point(15, 35);
             this.lblNIT.Name = "lblNIT";
-            this.lblNIT.Size = new System.Drawing.Size(33, 19);
+            this.lblNIT.Size = new System.Drawing.Size(31, 15);
             this.lblNIT.TabIndex = 0;
             this.lblNIT.Text = "NIT:";
             // 
@@ -94,7 +94,7 @@
             this.txtNIT.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtNIT.Location = new System.Drawing.Point(15, 55);
             this.txtNIT.Name = "txtNIT";
-            this.txtNIT.Size = new System.Drawing.Size(300, 27);
+            this.txtNIT.Size = new System.Drawing.Size(300, 25);
             this.txtNIT.TabIndex = 1;
             // 
             // lblDPI
@@ -103,7 +103,7 @@
             this.lblDPI.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblDPI.Location = new System.Drawing.Point(345, 35);
             this.lblDPI.Name = "lblDPI";
-            this.lblDPI.Size = new System.Drawing.Size(34, 19);
+            this.lblDPI.Size = new System.Drawing.Size(30, 15);
             this.lblDPI.TabIndex = 2;
             this.lblDPI.Text = "DPI:";
             // 
@@ -112,7 +112,7 @@
             this.txtDPI.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtDPI.Location = new System.Drawing.Point(345, 55);
             this.txtDPI.Name = "txtDPI";
-            this.txtDPI.Size = new System.Drawing.Size(300, 27);
+            this.txtDPI.Size = new System.Drawing.Size(300, 25);
             this.txtDPI.TabIndex = 3;
             // 
             // lblNombre
@@ -121,7 +121,7 @@
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblNombre.Location = new System.Drawing.Point(15, 100);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(126, 19);
+            this.lblNombre.Size = new System.Drawing.Size(117, 15);
             this.lblNombre.TabIndex = 4;
             this.lblNombre.Text = "Nombre Completo:";
             // 
@@ -130,7 +130,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtNombre.Location = new System.Drawing.Point(15, 120);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(630, 27);
+            this.txtNombre.Size = new System.Drawing.Size(630, 25);
             this.txtNombre.TabIndex = 5;
             // 
             // lblCargo
@@ -139,9 +139,19 @@
             this.lblCargo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblCargo.Location = new System.Drawing.Point(15, 155);
             this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(49, 19);
+            this.lblCargo.Size = new System.Drawing.Size(42, 15);
             this.lblCargo.TabIndex = 6;
             this.lblCargo.Text = "Cargo:";
+            // 
+            // cmbCargo
+            // 
+            this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCargo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbCargo.FormattingEnabled = true;
+            this.cmbCargo.Location = new System.Drawing.Point(15, 175);
+            this.cmbCargo.Name = "cmbCargo";
+            this.cmbCargo.Size = new System.Drawing.Size(630, 25);
+            this.cmbCargo.TabIndex = 7;
             // 
             // gbAsignaciones
             // 
@@ -163,7 +173,7 @@
             this.lblPlantillaId.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblPlantillaId.Location = new System.Drawing.Point(15, 35);
             this.lblPlantillaId.Name = "lblPlantillaId";
-            this.lblPlantillaId.Size = new System.Drawing.Size(53, 19);
+            this.lblPlantillaId.Size = new System.Drawing.Size(48, 15);
             this.lblPlantillaId.TabIndex = 0;
             this.lblPlantillaId.Text = "Sueldo:";
             // 
@@ -177,7 +187,7 @@
             this.buttonPlantilla.Name = "buttonPlantilla";
             this.buttonPlantilla.Size = new System.Drawing.Size(300, 35);
             this.buttonPlantilla.TabIndex = 1;
-            this.buttonPlantilla.Text = "💰 Añadir Plantilla de Sueldo";
+            this.buttonPlantilla.Text = "Añadir Plantilla de Sueldo";
             this.buttonPlantilla.UseVisualStyleBackColor = false;
             this.buttonPlantilla.Click += new System.EventHandler(this.buttonPlantilla_Click);
             // 
@@ -187,7 +197,7 @@
             this.lblHorarioId.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblHorarioId.Location = new System.Drawing.Point(345, 35);
             this.lblHorarioId.Name = "lblHorarioId";
-            this.lblHorarioId.Size = new System.Drawing.Size(58, 19);
+            this.lblHorarioId.Size = new System.Drawing.Size(51, 15);
             this.lblHorarioId.TabIndex = 2;
             this.lblHorarioId.Text = "Horario:";
             // 
@@ -201,7 +211,7 @@
             this.buttonHorario.Name = "buttonHorario";
             this.buttonHorario.Size = new System.Drawing.Size(300, 35);
             this.buttonHorario.TabIndex = 3;
-            this.buttonHorario.Text = "🕐 Añadir Horario";
+            this.buttonHorario.Text = "Añadir Horario";
             this.buttonHorario.UseVisualStyleBackColor = false;
             this.buttonHorario.Click += new System.EventHandler(this.buttonHorario_Click);
             // 
@@ -227,7 +237,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(300, 45);
             this.btnGuardar.TabIndex = 0;
-            this.btnGuardar.Text = "💾 Guardar Empleado";
+            this.btnGuardar.Text = "Guardar Empleado";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -241,19 +251,9 @@
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(300, 45);
             this.btnLimpiar.TabIndex = 1;
-            this.btnLimpiar.Text = "🔄 Limpiar Campos";
+            this.btnLimpiar.Text = "Limpiar Campos";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.LimpiarCampos);
-            // 
-            // cmbCargo
-            // 
-            this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCargo.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Location = new System.Drawing.Point(15, 177);
-            this.cmbCargo.Name = "cmbCargo";
-            this.cmbCargo.Size = new System.Drawing.Size(630, 28);
-            this.cmbCargo.TabIndex = 9;
             // 
             // Empleados_Form
             // 
@@ -278,7 +278,6 @@
             this.gbAsignaciones.PerformLayout();
             this.gbAcciones.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         private System.Windows.Forms.Panel panelSuperior;
@@ -291,6 +290,7 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblCargo;
+        private System.Windows.Forms.ComboBox cmbCargo;
         private System.Windows.Forms.GroupBox gbAsignaciones;
         private System.Windows.Forms.Label lblPlantillaId;
         private System.Windows.Forms.Button buttonPlantilla;
@@ -299,6 +299,5 @@
         private System.Windows.Forms.GroupBox gbAcciones;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.ComboBox cmbCargo;
     }
 }
