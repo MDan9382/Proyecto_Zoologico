@@ -129,6 +129,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Acceso_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Acceso_Form.Designer.cs">
+      <DependentUpon>Acceso_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Alimentacion_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,18 @@
     </Compile>
     <Compile Include="Forms\Animales_Form.Designer.cs">
       <DependentUpon>Animales_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Control_Clinico_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Control_Clinico_Form.Designer.cs">
+      <DependentUpon>Control_Clinico_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Control_Limpieza_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Control_Limpieza_Form.Designer.cs">
+      <DependentUpon>Control_Limpieza_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Control_Tiempo_Form.cs">
       <SubType>Form</SubType>
@@ -171,6 +189,12 @@
     <Compile Include="Forms\Inventario_Form.Designer.cs">
       <DependentUpon>Inventario_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Jaulas_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Jaulas_Form.Designer.cs">
+      <DependentUpon>Jaulas_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Locaciones_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,11 +212,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Acceso_Form.resx">
+      <DependentUpon>Acceso_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Alimentacion_Form.resx">
       <DependentUpon>Alimentacion_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Animales_Form.resx">
-      <DependentUpon>Animales_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Control_Clinico_Form.resx">
+      <DependentUpon>Control_Clinico_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Control_Limpieza_Form.resx">
+      <DependentUpon>Control_Limpieza_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Control_Tiempo_Form.resx">
       <DependentUpon>Control_Tiempo_Form.cs</DependentUpon>
@@ -208,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Inventario_Form.resx">
       <DependentUpon>Inventario_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Jaulas_Form.resx">
+      <DependentUpon>Jaulas_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Plantilla_Form.resx">
       <DependentUpon>Plantilla_Form.cs</DependentUpon>

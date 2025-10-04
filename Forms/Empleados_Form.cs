@@ -18,9 +18,20 @@ namespace Proyecto_Zoologico.Forms
                 plantilla_Id: 0,
                 horario_Id: 0
             );
+            CargarCargos();
         }
 
         public Empleados empleado;
+
+        private void CargarCargos()
+        {
+            cmbCargo.Items.Add("Veterinario");
+            cmbCargo.Items.Add("Cuidador");
+            cmbCargo.Items.Add("Concerje");
+            cmbCargo.Items.Add("Administrador");
+            cmbCargo.Items.Add("Recursos Humanos");
+            cmbCargo.Items.Add("Seguridad");
+        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -29,7 +40,7 @@ namespace Proyecto_Zoologico.Forms
                 empleado.Empleado_NIT = txtNIT.Text;
                 empleado.Empleado_DPI = txtDPI.Text;
                 empleado.Empleado_Nombre = txtNombre.Text;
-                empleado.Empleado_Cargo = txtCargo.Text;
+                empleado.Empleado_Cargo = cmbCargo.Text;
                 
 
                 Datos.DAO.Empleados_DAO empleadoDAO = new Datos.DAO.Empleados_DAO();
@@ -49,7 +60,6 @@ namespace Proyecto_Zoologico.Forms
             txtNIT.Clear();
             txtDPI.Clear();
             txtNombre.Clear();
-            txtCargo.Clear();
             
         }
 

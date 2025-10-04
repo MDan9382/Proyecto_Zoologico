@@ -50,9 +50,10 @@ namespace Proyecto_Zoologico.Datos.DAO
                     Control_Limpieza controlLimpieza = new Control_Limpieza(
                         (TimeSpan)reader["ControlLimpieza_Hora"],
                         Convert.ToInt32(reader["Empleado_Id"]),
-                        Convert.ToInt32(reader["Locacion_Id"])                        
+                        Convert.ToInt32(reader["Locacion_Id"]),
+                        Convert.ToDateTime(reader["ControlLimpieza_Fecha"])                        
                     );
-                    controlLimpieza.ControlLimpieza_Fecha = Convert.ToInt32(reader["ControlLimpieza_Fecha"]);
+                    
                     controlLimpieza.ControlLimpieza_Id = Convert.ToInt32(reader["ControlLimpieza_Id"]);                    
                     controlesLimpieza.Add(controlLimpieza);
                 }
@@ -126,11 +127,11 @@ namespace Proyecto_Zoologico.Datos.DAO
                 {
                     Control_Limpieza controlLimpieza = new Control_Limpieza(
                         (TimeSpan)reader["ControlLimpieza_Hora"],
-                        Convert.ToInt32(reader["Empleado_Id"])
-                        , Convert.ToInt32(reader["Locacion_Id"])
+                        Convert.ToInt32(reader["Empleado_Id"]),
+                        Convert.ToInt32(reader["Locacion_Id"]),
+                        Convert.ToDateTime(reader["ControlLimpieza_Fecha"])
                     );
-                    controlLimpieza.ControlLimpieza_Id = Convert.ToInt32(reader["ControlLimpieza_Id"]);
-                    controlLimpieza.ControlLimpieza_Fecha = Convert.ToInt32(reader["ControlLimpieza_Fecha"]);
+                    controlLimpieza.ControlLimpieza_Id = Convert.ToInt32(reader["ControlLimpieza_Id"]);    
                     controlesLimpieza.Add(controlLimpieza);
                 }
                 reader.Close();

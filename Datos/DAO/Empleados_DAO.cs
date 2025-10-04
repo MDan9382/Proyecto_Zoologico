@@ -156,5 +156,85 @@ namespace Proyecto_Zoologico.Datos.DAO
             }
             return empleados;
         }
+
+        public List<string> BuscarEmpleados()
+            {
+            List<string> empleados = new List<string>();
+            try
+            {
+                string query = "SELECT Empleado_Nombre FROM db_zoologico.tb_Empleados";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    empleados.Add(reader["Empleado_Nombre"].ToString());
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al buscar empleados: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return empleados;
+        }
+
+        public List<string> BuscarEmpleadosPorCargo(string cargo)
+        {
+            List<string> empleados = new List<string>();
+            try
+            {
+                string query = "SELECT Empleado_Nombre, Empleado_Cargo FROM db_zoologico.tb_Empleados";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader["Empleado_Cargo"].ToString() == cargo)
+                        empleados.Add(reader["Empleado_Nombre"].ToString());
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al buscar empleados: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return empleados;
+        }
+
+        public int ObtenerIdEmpleadoPorNombre(string nombre)
+        {
+            int empleadoId = -1; 
+            try
+            {
+                string query = "SELECT Empleado_Id FROM db_zoologico.tb_Empleados WHERE Empleado_Nombre = @Nombre";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Nombre", nombre);
+                connection.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    empleadoId = Convert.ToInt32(reader["Empleado_Id"]);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener ID del empleado: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return empleadoId;
+        }
     }
 }
