@@ -66,15 +66,7 @@ namespace Proyecto_Zoologico.Formularios
                 HeaderText = "Dieta",
                 Name = "Animal_Dieta",
                 Width = 120
-            });
-
-            dgvAnimales.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "Alimentacion_Id",
-                HeaderText = "ID Alimentación",
-                Name = "Alimentacion_Id",
-                Width = 120
-            });
+            });           
         }
 
         private void CargarComboBoxDieta()
@@ -85,7 +77,7 @@ namespace Proyecto_Zoologico.Formularios
             cmbDieta.Items.Add("Omnívoro");
             cmbDieta.Items.Add("Insectívoro");
             cmbDieta.Items.Add("Piscívoro");
-            
+
         }
 
         private void CargarComboBoxBusqueda()
@@ -255,7 +247,7 @@ namespace Proyecto_Zoologico.Formularios
                     txtEspecie.Text = fila.Cells["Animal_Especie"].Value.ToString();
                     txtTamaño.Text = fila.Cells["Animal_Tamaño"].Value.ToString();
                     txtPeso.Text = fila.Cells["Animal_Peso"].Value.ToString();
-                    cmbDieta.SelectedItem = fila.Cells["Animal_Dieta"].Value.ToString();                   
+                    cmbDieta.SelectedItem = fila.Cells["Animal_Dieta"].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -315,7 +307,7 @@ namespace Proyecto_Zoologico.Formularios
                 return false;
             }
 
-            
+
             return true;
         }
 
@@ -325,7 +317,7 @@ namespace Proyecto_Zoologico.Formularios
             txtEspecie.Clear();
             txtTamaño.Clear();
             txtPeso.Clear();
-            cmbDieta.SelectedIndex = -1;            
+            cmbDieta.SelectedIndex = -1;
             txtBuscar.Clear();
             dgvAnimales.ClearSelection();
         }

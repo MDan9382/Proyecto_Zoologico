@@ -56,16 +56,14 @@ namespace Proyecto_Zoologico.Formularios
         private void CargarComboBoxTipo()
         {
             cmbTipo.Items.Clear();
-            cmbTipo.Items.Add("Hábitat");
-            cmbTipo.Items.Add("Área de Servicio");
-            cmbTipo.Items.Add("Zona de Recreación");
+            cmbTipo.Items.Add("Jaula");
+            cmbTipo.Items.Add("Zona Recreativa");
             cmbTipo.Items.Add("Área Administrativa");
-            cmbTipo.Items.Add("Clínica Veterinaria");
-            cmbTipo.Items.Add("Área de Cuarentena");
-            cmbTipo.Items.Add("Zona de Alimentación");
-            cmbTipo.Items.Add("Parque Infantil");
-            cmbTipo.Items.Add("Mirador");
-            cmbTipo.Items.Add("Auditorio");
+            cmbTipo.Items.Add("Clínica");
+            cmbTipo.Items.Add("Salon");
+            cmbTipo.Items.Add("Baños");
+            cmbTipo.Items.Add("Comedor");
+            cmbTipo.Items.Add("Bodega");
         }
 
         private void CargarComboBoxBusqueda()

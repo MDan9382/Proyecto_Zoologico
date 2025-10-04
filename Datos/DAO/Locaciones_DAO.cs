@@ -138,5 +138,83 @@ namespace Proyecto_Zoologico.Datos.DAO
             return locaciones;
         }
 
+        public List<string> BuscarJaulas()
+        {
+            List<string> jaulas = new List<string>();
+            try
+            {
+                connection.Open();
+                string query = "SELECT Locacion_Nombre FROM db_zoologico.tb_locaciones WHERE Locacion_Tipo = 'Jaula'";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    jaulas.Add(reader["Locacion_Nombre"].ToString());
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al buscar las jaulas: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return jaulas;
+        }
+
+        public List<string> BuscarLocaciones()
+        {
+            List<string> locaciones = new List<string>();
+            try
+            {
+                connection.Open();
+                string query = "SELECT Locacion_Nombre FROM db_zoologico.tb_locaciones";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    locaciones.Add(reader["Locacion_Nombre"].ToString());
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al buscar las locaciones: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return locaciones;
+        }
+
+        public int ObtenerLocacionIdPorNombre(string nombre)
+        {
+            int locacionId = -1;
+            try
+            {
+                connection.Open();
+                string query = "SELECT Locacion_Id FROM db_zoologico.tb_locaciones WHERE Locacion_Nombre = @nombre";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@nombre", nombre);
+                object result = command.ExecuteScalar();
+                if (result != null)
+                {
+                    locacionId = Convert.ToInt32(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el ID de la locación: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return locacionId;
+        }
+
     }
 }
